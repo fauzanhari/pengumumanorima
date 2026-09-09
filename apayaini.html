@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PENGUMUMAN ORIMA 2026</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+
+        background: radial-gradient(
+            circle at 20% 20%,
+            #7c3aed55 0,
+            transparent 30%
+          ),
+          radial-gradient(circle at 80% 80%, #a855f755 0, transparent 30%),
+          linear-gradient(135deg, #090014, #16002e, #24004a, #0b0018);
+      }
+
+      /* Bintang */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+
+        background-image: radial-gradient(white 1px, transparent 1px),
+          radial-gradient(#c084fc 1px, transparent 1px),
+          radial-gradient(#fff 1px, transparent 1px);
+
+        background-size: 90px 90px, 140px 140px, 220px 220px;
+
+        background-position: 10px 20px, 50px 80px, 100px 30px;
+
+        opacity: 0.35;
+      }
+
+      .container {
+        width: min(90%, 650px);
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .announcement {
+        padding: 45px 35px;
+        text-align: center;
+
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(216, 180, 254, 0.3);
+        border-radius: 28px;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        box-shadow: 0 0 40px rgba(168, 85, 247, 0.25),
+          inset 0 0 30px rgba(255, 255, 255, 0.03);
+
+        animation: muncul 1s ease;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 7px 15px;
+        margin-bottom: 20px;
+
+        font-size: 12px;
+        letter-spacing: 2px;
+        font-weight: bold;
+
+        color: #e9d5ff;
+        border: 1px solid #a855f7;
+        border-radius: 50px;
+
+        background: rgba(168, 85, 247, 0.12);
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+      }
+
+      h1 {
+        font-size: clamp(32px, 7vw, 58px);
+        line-height: 1.05;
+        margin-bottom: 18px;
+
+        background: linear-gradient(90deg, #ffffff, #d8b4fe, #a855f7, #ffffff);
+
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        animation: gradient 4s linear infinite;
+      }
+
+      .subtitle {
+        color: #d8b4fe;
+        font-size: 17px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .message {
+        padding: 20px;
+        margin: 25px 0;
+
+        border-radius: 18px;
+
+        background: linear-gradient(
+          135deg,
+          rgba(168, 85, 247, 0.18),
+          rgba(88, 28, 135, 0.15)
+        );
+
+        border: 1px solid rgba(192, 132, 252, 0.25);
+      }
+
+      .message p {
+        font-size: 19px;
+        font-weight: bold;
+        color: #f3e8ff;
+      }
+
+      ul {
+        list-style: none;
+        text-align: left;
+        margin: 25px auto;
+        max-width: 420px;
+      }
+
+      li {
+        margin: 13px 0;
+        padding: 14px 16px;
+
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+
+        border-radius: 14px;
+
+        color: #ede9fe;
+        transition: 0.3s;
+      }
+
+      li:hover {
+        transform: translateX(7px);
+        background: rgba(168, 85, 247, 0.15);
+        border-color: rgba(192, 132, 252, 0.4);
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+      }
+
+      li::before {
+        content: "✦";
+        color: #c084fc;
+        font-size: 18px;
+        margin-right: 12px;
+      }
+
+      h2 {
+        margin-top: 30px;
+
+        font-size: 28px;
+        color: #e9d5ff;
+
+        text-shadow: 0 0 10px #a855f7, 0 0 25px #7c3aed;
+      }
+
+      .footer {
+        margin-top: 30px;
+        font-size: 12px;
+        color: #a78bfa;
+        opacity: 0.8;
+      }
+
+      .moon {
+        position: fixed;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+
+        background: radial-gradient(
+          circle at 35% 30%,
+          #f3e8ff,
+          #c084fc 40%,
+          #581c87 75%,
+          transparent 76%
+        );
+
+        top: -60px;
+        right: -50px;
+
+        opacity: 0.3;
+        filter: blur(1px);
+        box-shadow: 0 0 80px #a855f7;
+      }
+
+      @keyframes muncul {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.97);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes gradient {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .announcement {
+          padding: 35px 22px;
+        }
+
+        .subtitle {
+          font-size: 15px;
+        }
+
+        .message p {
+          font-size: 16px;
+        }
+
+        li {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="moon"></div>
+
+    <main class="container">
+      <section class="announcement">
+        <h1>
+          PENGUMUMAN<br />
+          ORIMA 2026
+        </h1>
+
+        <p class="subtitle">HEHE BELUM YAH, SABAR YAH GUYSS</p>
+
+        <div class="message">
+          <p>PERBANYAK INI YAH BIAR LULUS 🤲</p>
+        </div>
+
+        <ul>
+          <li>No skip solat wajib</li>
+          <li>Rajin ngaji</li>
+          <li>Tetap tahajjud 3</li>
+          <li>Tetap dhuha</li>
+          <li>Tetap istiqomah</li>
+        </ul>
+
+        <h2>INSYALLAH LULUS 🤲✨</h2>
+
+        <div class="footer">hehe maaf kena prankkk, itu kameranyahh</div>
+      </section>
+    </main>
+  </body>
+</html>
+```
